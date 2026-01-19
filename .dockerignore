@@ -1,0 +1,16 @@
+# Dependencies (will be installed in Docker)
+node_modules/
+
+# Build outputs
+.next/
+out/
+
+# Development files
+*.log
+.DS_Store
+.env.local
+.env.*.local
+
+# IDE
+.idea/
+.vscode/

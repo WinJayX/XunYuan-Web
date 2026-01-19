@@ -1,0 +1,504 @@
+/* Family list styles */
+.family-list-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+}
+
+.family-list-loading {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: white;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    border-top-color: #c9b037;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.family-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(201, 176, 55, 0.3);
+}
+
+.header-left h1 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 28px;
+    color: #c9b037;
+    margin: 0 0 5px 0;
+}
+
+.header-left p {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+}
+
+.header-right {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.btn-admin {
+    padding: 10px 20px;
+    border: 1px solid rgba(201, 176, 55, 0.5);
+    background: linear-gradient(135deg, rgba(201, 176, 55, 0.2), rgba(212, 175, 55, 0.1));
+    color: #c9b037;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.btn-admin:hover {
+    background: linear-gradient(135deg, rgba(201, 176, 55, 0.3), rgba(212, 175, 55, 0.2));
+    border-color: #c9b037;
+    transform: translateY(-1px);
+}
+
+.btn-logout {
+    padding: 10px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: transparent;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-logout:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #c9b037;
+}
+
+.family-list-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.list-header h2 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 24px;
+    color: white;
+    margin: 0;
+}
+
+.btn-create {
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #c9b037, #d4af37);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-create:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(201, 176, 55, 0.4);
+}
+
+/* Empty state */
+.empty-state {
+    text-align: center;
+    padding: 80px 20px;
+    color: white;
+}
+
+.empty-icon {
+    font-size: 80px;
+    margin-bottom: 20px;
+}
+
+.empty-state h3 {
+    font-size: 24px;
+    margin: 0 0 10px 0;
+}
+
+.empty-state p {
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0 0 30px 0;
+}
+
+.btn-create-large {
+    padding: 16px 40px;
+    background: linear-gradient(135deg, #c9b037, #d4af37);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-create-large:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(201, 176, 55, 0.4);
+}
+
+/* Family grid */
+.family-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.family-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    padding: 24px;
+    cursor: pointer;
+    transition: all 0.3s;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.family-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.family-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.family-card-header h3 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 20px;
+    color: #1a1a2e;
+    margin: 0;
+}
+
+.btn-delete {
+    width: 28px;
+    height: 28px;
+    border: none;
+    background: #f5f5f5;
+    color: #999;
+    border-radius: 50%;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-delete:hover {
+    background: #ffebee;
+    color: #c62828;
+}
+
+.family-subtitle {
+    font-size: 14px;
+    color: #666;
+    margin: 0 0 15px 0;
+    min-height: 20px;
+}
+
+.family-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #999;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+/* Family card actions */
+.family-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.btn-family-tree,
+.btn-genealogy {
+    flex: 1;
+    padding: 10px 16px;
+    border: 2px solid;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s;
+    text-align: center;
+}
+
+.btn-family-tree {
+    background: white;
+    border-color: #c9b037;
+    color: #c9b037;
+}
+
+.btn-family-tree:hover {
+    background: linear-gradient(135deg, #c9b037, #d4af37);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(201, 176, 55, 0.3);
+}
+
+.btn-genealogy {
+    background: white;
+    border-color: #764ba2;
+    color: #764ba2;
+}
+
+.btn-genealogy:hover {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(118, 75, 162, 0.3);
+}
+
+
+/* Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.create-modal {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    width: 90%;
+    max-width: 400px;
+}
+
+.create-modal h3 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 24px;
+    color: #1a1a2e;
+    margin: 0 0 24px 0;
+    text-align: center;
+}
+
+.create-modal .form-group {
+    margin-bottom: 20px;
+}
+
+.create-modal .form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.create-modal .form-group input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s;
+    box-sizing: border-box;
+}
+
+.create-modal .form-group input:focus {
+    border-color: #c9b037;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.btn-cancel {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    background: white;
+    color: #666;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-cancel:hover {
+    background: #f5f5f5;
+}
+
+.btn-confirm {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    background: linear-gradient(135deg, #c9b037, #d4af37);
+    color: white;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-confirm:hover:not(:disabled) {
+    transform: translateY(-2px);
+}
+
+.btn-confirm:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* Feedback Button */
+.btn-feedback {
+    padding: 10px 20px;
+    border: 1px solid rgba(102, 126, 234, 0.5);
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.1));
+    color: #a78bfa;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.btn-feedback:hover {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.3), rgba(118, 75, 162, 0.2));
+    border-color: #a78bfa;
+    transform: translateY(-1px);
+}
+
+/* Feedback Modal */
+.feedback-modal {
+    background: rgba(26, 26, 46, 0.98);
+    border: 1px solid rgba(201, 176, 55, 0.3);
+    border-radius: 20px;
+    padding: 30px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(20px);
+}
+
+.feedback-modal h3 {
+    color: #c9b037;
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.feedback-desc {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    margin-bottom: 24px;
+}
+
+.feedback-modal select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='6'%3E%3Cpath d='M0 0l6 6 6-6z' fill='rgba(255,255,255,0.5)'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+}
+
+.feedback-modal select:focus {
+    border-color: #c9b037;
+}
+
+.feedback-modal select option {
+    background: #1a1a2e;
+    color: white;
+}
+
+.feedback-modal textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+    resize: vertical;
+    min-height: 100px;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+.feedback-modal textarea:focus {
+    border-color: #c9b037;
+}
+
+.feedback-modal textarea::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .family-list-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .header-right {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .family-list-main {
+        padding: 20px;
+    }
+
+    .list-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: stretch;
+    }
+
+    .family-grid {
+        grid-template-columns: 1fr;
+    }
+}

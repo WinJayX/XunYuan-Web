@@ -1,0 +1,335 @@
+/* Biography Editor Styles */
+.biography-editor-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    animation: fadeIn 0.2s ease-in;
+}
+
+.biography-editor-container {
+    background: white;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 1000px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.3s ease-out;
+}
+
+.biography-editor-header {
+    padding: 20px 24px;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.biography-editor-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.biography-close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #666;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+
+.biography-close-btn:hover {
+    background: #f0f0f0;
+    color: #333;
+}
+
+.biography-editor-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.biography-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.biography-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.biography-list-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.btn-add-bio {
+    background: #8B4513;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+}
+
+.btn-add-bio:hover {
+    background: #6d3410;
+    transform: translateY(-1px);
+}
+
+.biography-item {
+    background: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    transition: all 0.2s;
+}
+
+.biography-item:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.biography-item-content {
+    flex: 1;
+}
+
+.biography-item-content h4 {
+    margin: 0 0 6px 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+.biography-relation {
+    font-size: 0.85rem;
+    color: #888;
+    margin: 0 0 8px 0;
+}
+
+.biography-intro {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.biography-item-actions {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.btn-bio-edit,
+.btn-bio-delete {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+}
+
+.btn-bio-edit {
+    background: #4CAF50;
+    color: white;
+}
+
+.btn-bio-edit:hover {
+    background: #45a049;
+}
+
+.btn-bio-delete {
+    background: #f44336;
+    color: white;
+}
+
+.btn-bio-delete:hover {
+    background: #da190b;
+}
+
+.no-biographies {
+    text-align: center;
+    color: #999;
+    padding: 40px 20px;
+    font-style: italic;
+}
+
+.biography-edit-form {
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.biography-edit-form h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #555;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #8B4513;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.btn-save-current,
+.btn-cancel-current {
+    flex: 1;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+}
+
+.btn-save-current {
+    background: #4CAF50;
+    color: white;
+}
+
+.btn-save-current:hover {
+    background: #45a049;
+}
+
+.btn-cancel-current {
+    background: #9e9e9e;
+    color: white;
+}
+
+.btn-cancel-current:hover {
+    background: #757575;
+}
+
+.biography-editor-footer {
+    padding: 16px 24px;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+}
+
+.btn-save-all,
+.btn-cancel {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.btn-save-all {
+    background: #8B4513;
+    color: white;
+}
+
+.btn-save-all:hover {
+    background: #6d3410;
+}
+
+.btn-cancel {
+    background: #e0e0e0;
+    color: #333;
+}
+
+.btn-cancel:hover {
+    background: #d0d0d0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .biography-editor-body {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
