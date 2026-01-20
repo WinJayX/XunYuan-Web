@@ -87,7 +87,7 @@ export default function GenealogyPage() {
       }
     } catch (error) {
       console.error('Failed to load family data:', error);
-      alert('加载家谱数据失败');
+      alert('加载族谱数据失败');
     } finally {
       setLoading(false);
     }
@@ -168,7 +168,7 @@ export default function GenealogyPage() {
     return (
       <div className="genealogy-loading">
         <div className="loading-spinner"></div>
-        <p>正在加载家谱...</p>
+        <p>正在加载族谱...</p>
       </div>
     );
   }
@@ -176,7 +176,7 @@ export default function GenealogyPage() {
   if (!familyData) {
     return (
       <div className="genealogy-loading">
-        <p>未找到家谱数据</p>
+        <p>未找到族谱数据</p>
         <button onClick={() => router.back()} className="back-button">
           返回
         </button>
