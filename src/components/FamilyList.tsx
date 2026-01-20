@@ -130,7 +130,7 @@ export default function FamilyList({ onLogout, isAdmin, onOpenAdmin }: FamilyLis
         <div className="family-list-container">
             <header className="family-list-header">
                 <div className="header-left">
-                    <h1>寻源家谱</h1>
+                    <h1>✨✨寻源族谱✨✨</h1>
                     <p>欢迎回来，{user?.nickname}</p>
                 </div>
                 <div className="header-right">

@@ -1,5 +1,5 @@
 # Multi-stage build for Next.js standalone
-FROM node:20-alpine AS builder
+FROM registry.cn-hangzhou.aliyuncs.com/library/node:20-alpine AS builder
 
 # Use China mirror for Alpine
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
@@ -20,7 +20,7 @@ COPY . .
 RUN npm run build
 
 # Production stage with Node.js
-FROM node:20-alpine AS runner
+FROM registry.cn-hangzhou.aliyuncs.com/library/node:20-alpine AS runner
 
 # Use China mirror for Alpine
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories

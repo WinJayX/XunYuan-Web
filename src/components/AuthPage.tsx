@@ -121,7 +121,7 @@ export default function AuthPage({ onSuccess }: AuthPageProps) {
         <div className="auth-container">
             <div className="auth-card">
                 <div className="auth-header">
-                    <h1 className="auth-title">寻源家谱</h1>
+                    <h1 className="auth-title">✨✨寻源族谱✨✨</h1>
                     <p className="auth-subtitle">传承家族记忆，延续血脉亲情</p>
                 </div>
 
